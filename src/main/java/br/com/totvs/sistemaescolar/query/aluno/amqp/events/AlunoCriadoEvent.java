@@ -11,9 +11,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public final class AlunoUpsertedEvent {
+public final class AlunoCriadoEvent {
 
-	public static final String NAME = "AlunoUpsertedEvent";
+	public static final String NAME = "AlunoCriadoEvent";
 
 	public static final String CONDITIONAL_EXPRESSION = "headers['type']=='" + NAME + "'";
 

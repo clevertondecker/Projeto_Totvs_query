@@ -24,14 +24,14 @@ import io.swagger.annotations.ApiOperation;
 @ApiGuideline(ApiGuidelineVersion.v1)
 public class AlunoController {
 
-	public static final String PATH = "api/v1/operadores";
+	public static final String PATH = "api/v1/alunos";
 	
 	@Autowired
 	private AlunoRepository alunoRepository;
 	
-	@ApiOperation(value = "Retorna uma lista de operadores.", httpMethod = "GET", consumes = APPLICATION_JSON_VALUE)
+	@ApiOperation(value = "Retorna uma lista de alunos.", httpMethod = "GET", consumes = APPLICATION_JSON_VALUE)
 	@GetMapping(path = "")
-	public ApiCollectionResponse<Aluno> getAllOperador(ApiPageRequest apiPage, ApiSortRequest apiSort) {
+	public ApiCollectionResponse<Aluno> getAllAlunos(ApiPageRequest apiPage, ApiSortRequest apiSort) {
 		return this.alunoRepository.findAll(apiPage, apiSort);
 	}
 }
