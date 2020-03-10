@@ -1,4 +1,4 @@
-package br.com.totvs.sistemaescolar.query;
+package br.com.totvs.sistemaescolar.query.config;
 
 
 import org.springframework.cloud.stream.annotation.Input;
