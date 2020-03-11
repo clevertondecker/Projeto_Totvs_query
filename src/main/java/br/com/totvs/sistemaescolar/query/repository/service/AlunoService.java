@@ -5,7 +5,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.totvs.sistemaescolar.query.aluno.amqp.events.AlunoCriadoEvent;
+import br.com.totvs.sistemaescolar.query.aluno.amqp.AlunoCriadoEvent;
 import br.com.totvs.sistemaescolar.query.repository.Aluno;
 import br.com.totvs.sistemaescolar.query.repository.AlunoRepository;
 
@@ -25,12 +25,19 @@ public class AlunoService {
 			aluno.setCpf(event.getCpf());
 			aluno.setMatricula(event.getMatricula());
 			aluno.setFormaIngresso(event.getFormaIngresso());
+			aluno.setTurmaId(event.getTurmaId());
 
 			alunoRepository.save(aluno);
 		}, () -> {
 
-			Aluno aluno = Aluno.builder().id(event.getId()).nome(event.getNome()).email(event.getEmail())
-					.cpf(event.getCpf()).matricula(event.getMatricula()).formaIngresso(event.getFormaIngresso())
+			Aluno aluno = Aluno.builder()
+					.id(event.getId())
+					.nome(event.getNome())
+					.email(event.getEmail())
+					.cpf(event.getCpf())
+					.matricula(event.getMatricula())
+					.formaIngresso(event.getFormaIngresso())
+					.turmaId(event.getTurmaId())
 					.build();
 			alunoRepository.save(aluno);
 		});

@@ -1,4 +1,4 @@
-package br.com.totvs.sistemaescolar.query.aluno.amqp.events;
+package br.com.totvs.sistemaescolar.query.aluno.amqp;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,21 +11,18 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public final class AlunoCriadoEvent {
+public class AlunoCriadoEvent {
 
 	public static final String NAME = "AlunoCriadoEvent";
 
 	public static final String CONDITIONAL_EXPRESSION = "headers['type']=='" + NAME + "'";
 
 	private String id;
-
 	private String nome;
-
 	private String email;
-
 	private String cpf;
-
-	private String matricula;
-
 	private String formaIngresso;
+	private String matricula;
+	private String turmaId;
+
 }

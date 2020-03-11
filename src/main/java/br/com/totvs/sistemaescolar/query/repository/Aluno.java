@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @DynamicUpdate
 public class Aluno {
 
-	@Id 
+	@Id
 	@Column
 	private String id;
 	private String nome;
@@ -29,5 +29,6 @@ public class Aluno {
 	private String cpf;
 	private String matricula;
 	private String formaIngresso;
-	
+	private String turmaId;
+
 }

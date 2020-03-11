@@ -1,17 +1,17 @@
-package br.com.totvs.sistemaescolar.query.aluno;
+package br.com.totvs.sistemaescolar.query.aluno.amqp.events;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 
 import com.totvs.tjf.core.message.TOTVSMessage;
-
-import br.com.totvs.sistemaescolar.query.aluno.amqp.events.AlunoCriadoEvent;
+import br.com.totvs.sistemaescolar.query.aluno.amqp.AlunoCriadoEvent;
 import br.com.totvs.sistemaescolar.query.amqp.SistemaEscolaExchange;
 import br.com.totvs.sistemaescolar.query.repository.service.AlunoService;
 
 @EnableBinding(SistemaEscolaExchange.class)
-public class OperadorSubscriber {
+public class AlunoSubscriber {
 
 	@Autowired
 	private AlunoService service;

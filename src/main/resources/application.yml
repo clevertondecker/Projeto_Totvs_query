@@ -103,21 +103,21 @@ spring:
                 password: ${MQ-PWD}
                 virtualHost: ${MQ-VHOST}
 
-security:
-  access:
-    api:
-      permissions-uri: https://admin.rac.dev.totvs.io/totvs.rac/api/permissions
-  oauth2:    
-    resource:
-      id: 'authorization_api'
-      jwk:
-        key-set-uri: https://totvs.rac.dev.totvs.io/totvs.rac/.well-known/openid-configuration/jwks
+#security:
+#  access:
+#    api:
+#      permissions-uri: https://admin.rac.dev.totvs.io/totvs.rac/api/permissions
+#  oauth2:    
+#    resource:
+#      id: 'authorization_api'
+#      jwk:
+#        key-set-uri: https://totvs.rac.dev.totvs.io/totvs.rac/.well-known/openid-configuration/jwks
 
-yms:
+sistema_escolar-query:
   swagger:
     enabled: true
     oauth2:
-      client-id: yms_swagger
+      client-id: sistema_escolar_swagger
       client-secret: 132567
       auth-server: https://totvs.rac.dev.totvs.io/totvs.rac
          
@@ -162,123 +162,123 @@ spring:
 
 server:
   port: 8380
-
----
-# 
-# Perfil para testes
 #
-
-spring:
-
-  profiles: test
-
-  datasource:
-    url: jdbc:postgresql://localhost:5432/sistema_escolar-query
-    username: postgres
-    password: 132567
-    
-  flyway:
-    schemas: public
-
-  cloud:
-    stream:
-      binders:
-        rabbit1:
-          environment:
-            spring:
-              rabbitmq:
-                host: localhost
-                port: 5672
-                username: guest
-                password: guest
-                virtualHost: /
-         
-security:
-  access:
-    api:
-      permissions-uri: http://admin.rac.totvs.com.br/totvs.rac/api/permissions
-  oauth2:    
-    resource:
-      id: 'authorization_api'
-      jwk:
-        key-set-uri: http://admin.rac.totvs.com.br/totvs.rac/.well-known/openid-configuration/jwks
-
----
-# 
-# Profile to production
+#---
+## 
+## Perfil para testes
+##
 #
-
-spring:
-  profiles: prod
-
-server:
-  servlet:
-    context-path: /sistema_escolar/query
-  undertow:
-    io-threads: 20
----
-# 
-# Perfil para desenvolvimento
+#spring:
 #
-
-spring:
-
-  profiles: dev
-
-  datasource:
-    url: jdbc:postgresql://localhost:5432/sistema_escolar-query-dev
-    username: postgres
-    password: 132567
-  
-  flyway:
-    enabled: false
-    migrate: true
-    locations: classpath:db/migration
-    # Only TOTVS Tenant (94d73469-6861-46a8-96b3-1abf272e3983)
-    schemas: b56efb27-13bb-4767-8227-77abd3761023
-    baselineOnMigrate: true  
-
-  jpa:
-    show-sql: true
-    properties:      
-      hibernate:
-        format_sql: true
-        show_sql: true
-        hbm2ddl:
-          auto: "none"
-
-  cloud:
-    stream:
-      defaultBinder: rabbit1
-      bindings:
-        input-events:
-          destination: sistema_escolar-exchange
-          group: sistema_escolar-query
-        agendamento-input-events:
-          destination: agendamento-exchange
-          group: sistema_escolar-query
-        tjf-messaging-error-input:
-          destination: sistema_escolar-query-errors
-          group: sistema_escolar-query-errors
-        tjf-messaging-error-output:
-          destination: sistema_escolar-query-errors
-          group: sistema_escola-query-errors
-          producer:
-            requiredGroups: sistema_escolar-query-errors
-      binders:
-        rabbit1:
-          type: rabbit
-          environment:
-            spring:
-              rabbitmq:
-                host: localhost
-                port: 5672
-                username: guest
-                password: guest
-                virtualHost: /
-management:
-  server:
-    port: 8145
-
-server:
-  port: 8380
+#  profiles: test
+#
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/sistema_escolar-query
+#    username: postgres
+#    password: 132567
+#    
+#  flyway:
+#    schemas: public
+#
+#  cloud:
+#    stream:
+#      binders:
+#        rabbit1:
+#          environment:
+#            spring:
+#              rabbitmq:
+#                host: localhost
+#                port: 5672
+#                username: guest
+#                password: guest
+#                virtualHost: /
+#         
+#security:
+#  access:
+#    api:
+#      permissions-uri: http://admin.rac.totvs.com.br/totvs.rac/api/permissions
+#  oauth2:    
+#    resource:
+#      id: 'authorization_api'
+#      jwk:
+#        key-set-uri: http://admin.rac.totvs.com.br/totvs.rac/.well-known/openid-configuration/jwks
+#
+#---
+## 
+## Profile to production
+##
+#
+#spring:
+#  profiles: prod
+#
+#server:
+#  servlet:
+#    context-path: /sistema_escolar/query
+#  undertow:
+#    io-threads: 20
+#---
+## 
+## Perfil para desenvolvimento
+##
+#
+#spring:
+#
+#  profiles: dev
+#
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/sistema_escolar-query-dev
+#    username: postgres
+#    password: 132567
+#  
+#  flyway:
+#    enabled: false
+#    migrate: true
+#    locations: classpath:db/migration
+#    # Only TOTVS Tenant (94d73469-6861-46a8-96b3-1abf272e3983)
+#    schemas: b56efb27-13bb-4767-8227-77abd3761023
+#    baselineOnMigrate: true  
+#
+#  jpa:
+#    show-sql: true
+#    properties:      
+#      hibernate:
+#        format_sql: true
+#        show_sql: true
+#        hbm2ddl:
+#          auto: "none"
+#
+#  cloud:
+#    stream:
+#      defaultBinder: rabbit1
+#      bindings:
+#        input-events:
+#          destination: sistema_escolar-exchange
+#          group: sistema_escolar-query
+#        agendamento-input-events:
+#          destination: agendamento-exchange
+#          group: sistema_escolar-query
+#        tjf-messaging-error-input:
+#          destination: sistema_escolar-query-errors
+#          group: sistema_escolar-query-errors
+#        tjf-messaging-error-output:
+#          destination: sistema_escolar-query-errors
+#          group: sistema_escola-query-errors
+#          producer:
+#            requiredGroups: sistema_escolar-query-errors
+#      binders:
+#        rabbit1:
+#          type: rabbit
+#          environment:
+#            spring:
+#              rabbitmq:
+#                host: localhost
+#                port: 5672
+#                username: guest
+#                password: guest
+#                virtualHost: /
+#management:
+#  server:
+#    port: 8145
+#
+#server:
+#  port: 8380
