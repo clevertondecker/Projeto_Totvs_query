@@ -5,7 +5,7 @@ import org.springframework.messaging.SubscribableChannel;
 
 public interface SistemaEscolarExchange {
 
-	public static final String INPUT = "SistemaEscolarExchange-input-events";
+	public static final String INPUT = "yms-input-events";
 	
 	@Input(SistemaEscolarExchange.INPUT)
 	SubscribableChannel inputEvent();

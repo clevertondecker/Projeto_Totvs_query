@@ -9,7 +9,7 @@ management:
     health:
       enabled: true
     info:
-      enabled: false
+      enabled: true
     metrics:
       enabled: false
     prometheus:
@@ -47,7 +47,7 @@ spring:
     password: 132567
   
   flyway:
-    enabled: false
+    enabled: true
     migrate: true
     locations: classpath:db/migration
     # Only TOTVS Tenant (94d73469-6861-46a8-96b3-1abf272e3983)
@@ -70,27 +70,27 @@ spring:
             non_contextual_creation: true # https://github.com/spring-projects/spring-boot/issues/12007
         hbm2ddl:
           auto: "none"
-        show_sql: false
-        format_sql: false
+        show_sql: true
+        format_sql: true
        
   cloud:
     stream:
       defaultBinder: rabbit1
       bindings:
-        sistema_escolar-input-events:       
-          destination: sistema_escolar-exchange
-          group: sistema_escolar-query
+        yms-input-events:       
+          destination: yms-exchange
+          group: yms-query
         agendamento-input-events:
           destination: agendamento-exchange
-          group: sistema_escolar-query  
+          group: yms-query  
         tjf-messaging-error-input:
-          destination: sistema_escolar-query-errors
-          group: sistema_escolar-query-errors
+          destination: yms-query-errors
+          group: yms-query-errors
         tjf-messaging-error-output:
-          destination: sistema_escolar-query-errors
-          group: sistema_escolar-query-errors
+          destination: yms-query-errors
+          group: yms-query-errors
           producer:
-            requiredGroups: sistema_escolar-query-errors 
+            requiredGroups: yms-query-errors 
       binders:
         rabbit1:
           type: rabbit

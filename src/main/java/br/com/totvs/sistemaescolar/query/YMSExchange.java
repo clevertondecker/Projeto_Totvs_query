@@ -1,4 +1,5 @@
-package br.com.totvs.sistemaescolar.query.amqp;
+package br.com.totvs.sistemaescolar.query;
+
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;

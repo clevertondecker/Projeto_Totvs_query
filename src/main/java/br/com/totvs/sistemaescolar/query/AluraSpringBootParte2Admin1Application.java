@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.totvs.tjf.api.jpa.repository.impl.ApiJpaRepositoryImpl;
 
-import br.com.totvs.sistemaescolar.query.amqp.YMSProperties;
 import br.com.totvs.sistemaescolar.query.config.FlyWayProperties;
 
 @SpringBootApplication

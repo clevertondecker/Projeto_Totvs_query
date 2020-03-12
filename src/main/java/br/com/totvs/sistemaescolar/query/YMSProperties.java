@@ -1,4 +1,4 @@
-package br.com.totvs.sistemaescolar.query.amqp;
+package br.com.totvs.sistemaescolar.query;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

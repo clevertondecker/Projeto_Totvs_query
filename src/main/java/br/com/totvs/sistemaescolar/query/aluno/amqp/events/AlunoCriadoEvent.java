@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.ToString;
 
 @Data
@@ -17,6 +18,7 @@ public class AlunoCriadoEvent {
 
 	public static final String CONDITIONAL_EXPRESSION = "headers['type']=='" + NAME + "'";
 
+	@NonNull
 	private String id;
 	private String nome;
 	private String email;
