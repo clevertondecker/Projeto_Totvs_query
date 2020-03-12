@@ -1,5 +1,7 @@
 package br.com.totvs.sistemaescolar.query.aluno.amqp.events;
 
+import javax.persistence.Column;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,8 +25,10 @@ public class AlunoCriadoEvent {
 	private String nome;
 	private String email;
 	private String cpf;
-//	private String formaIngresso;
+	@Column(name="formaIngresso")
+	private String formaIngresso;
 	private String matricula;
-//	private String turmaId;
+	@Column(name="turmaId")
+	private String turmaId;
 
 }

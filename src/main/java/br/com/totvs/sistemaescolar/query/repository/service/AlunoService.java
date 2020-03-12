@@ -24,21 +24,18 @@ public class AlunoService {
 	public void handle(AlunoCriadoEvent event) {
 		alunoRepository.findById(event.getId()).ifPresentOrElse(aluno -> {
 
-//			LOG.info("Criar event1"+ event.getFormaIngresso());
+			LOG.info("Criar event1"+ event.getFormaIngresso());
 
-			
 			aluno.setId(event.getId());
 			aluno.setNome(event.getNome());
 			aluno.setEmail(event.getEmail());
 			aluno.setCpf(event.getCpf());
 			aluno.setMatricula(event.getMatricula());
-//			aluno.setFormaIngresso(event.getFormaIngresso());
-//			aluno.setTurmaId(event.getTurmaId());
+			aluno.setFormaIngresso(event.getFormaIngresso());
+			aluno.setTurmaId(event.getTurmaId());
 					
 			alunoRepository.save(aluno);
 		}, () -> {
-
-//			LOG.info("Criar event"+ event.getFormaIngresso());
 
 			Aluno aluno = Aluno.builder()
 					.id(event.getId())
@@ -46,8 +43,8 @@ public class AlunoService {
 					.email(event.getEmail())
 					.cpf(event.getCpf())
 					.matricula(event.getMatricula())
-//					.formaIngresso(event.getFormaIngresso())
-//					.turmaId(event.getTurmaId())
+					.formaIngresso(event.getFormaIngresso())
+					.turmaId(event.getTurmaId())
 					.build();
 			
 			LOG.info("salvou aluno");
