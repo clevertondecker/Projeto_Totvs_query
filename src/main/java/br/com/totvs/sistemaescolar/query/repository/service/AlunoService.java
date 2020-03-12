@@ -17,14 +17,11 @@ public class AlunoService {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AlunoService.class);
 
-	
 	@Autowired
 	private AlunoRepository alunoRepository;
 
 	public void handle(AlunoCriadoEvent event) {
 		alunoRepository.findById(event.getId()).ifPresentOrElse(aluno -> {
-
-			LOG.info("Criar event1"+ event.getFormaIngresso());
 
 			aluno.setId(event.getId());
 			aluno.setNome(event.getNome());
@@ -46,9 +43,6 @@ public class AlunoService {
 					.formaIngresso(event.getFormaIngresso())
 					.turmaId(event.getTurmaId())
 					.build();
-			
-			LOG.info("salvou aluno");
-
 			alunoRepository.save(aluno);
 		});
 	}

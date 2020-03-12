@@ -28,9 +28,7 @@ public class Aluno {
 	private String email;
 	private String cpf;
 	private String matricula;
-	@Column(name="formaIngresso")
 	private String formaIngresso;
-	@Column(name="turmaId")
 	private String turmaId;
 
 }
