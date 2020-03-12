@@ -24,8 +24,7 @@ public class ProfessorCriadoEvent {
 	private String nome;
 	private String email;
 	private String cpf;
-	private String formaIngresso;
-	private String matricula;
-	private String turmaId;
+	private String titulo;
+	private String disciplinaId;
 
 }

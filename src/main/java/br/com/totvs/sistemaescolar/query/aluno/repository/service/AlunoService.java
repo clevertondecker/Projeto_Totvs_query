@@ -1,21 +1,16 @@
-package br.com.totvs.sistemaescolar.query.repository.service;
+package br.com.totvs.sistemaescolar.query.aluno.repository.service;
 
 import javax.transaction.Transactional;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.totvs.sistemaescolar.query.aluno.amqp.events.AlunoCriadoEvent;
-import br.com.totvs.sistemaescolar.query.repository.Aluno;
-import br.com.totvs.sistemaescolar.query.repository.AlunoRepository;
+import br.com.totvs.sistemaescolar.query.aluno.repository.Aluno;
+import br.com.totvs.sistemaescolar.query.aluno.repository.AlunoRepository;
 
 @Service
 @Transactional
 public class AlunoService {
-
-	private static final Logger LOG = LoggerFactory.getLogger(AlunoService.class);
 
 	@Autowired
 	private AlunoRepository alunoRepository;

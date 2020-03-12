@@ -10,7 +10,7 @@ import com.totvs.tjf.core.message.TOTVSMessage;
 
 import br.com.totvs.sistemaescolar.query.YMSExchange;
 import br.com.totvs.sistemaescolar.query.aluno.amqp.events.AlunoCriadoEvent;
-import br.com.totvs.sistemaescolar.query.repository.service.AlunoService;
+import br.com.totvs.sistemaescolar.query.aluno.repository.service.AlunoService;
 
 @EnableBinding(YMSExchange.class)
 public class AlunoSubscriber {

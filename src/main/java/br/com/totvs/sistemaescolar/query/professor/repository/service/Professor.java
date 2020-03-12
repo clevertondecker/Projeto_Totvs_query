@@ -1,4 +1,4 @@
-package br.com.totvs.sistemaescolar.query.repository;
+package br.com.totvs.sistemaescolar.query.professor.repository.service;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @DynamicInsert
 @DynamicUpdate
-public class Aluno {
+public class Professor {
 
 	@Id
 	@Column
@@ -27,8 +27,7 @@ public class Aluno {
 	private String nome;
 	private String email;
 	private String cpf;
-	private String matricula;
-	private String formaIngresso;
-	private String turmaId;
+	private String titulo;
+	private String disciplinaId;
 
 }

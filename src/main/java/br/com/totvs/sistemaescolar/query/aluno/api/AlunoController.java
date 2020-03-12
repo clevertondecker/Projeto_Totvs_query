@@ -14,8 +14,8 @@ import com.totvs.tjf.api.context.v1.request.ApiPageRequest;
 import com.totvs.tjf.api.context.v1.request.ApiSortRequest;
 import com.totvs.tjf.api.context.v1.response.ApiCollectionResponse;
 
-import br.com.totvs.sistemaescolar.query.repository.Aluno;
-import br.com.totvs.sistemaescolar.query.repository.AlunoRepository;
+import br.com.totvs.sistemaescolar.query.aluno.repository.Aluno;
+import br.com.totvs.sistemaescolar.query.aluno.repository.AlunoRepository;
 import io.swagger.annotations.ApiOperation;
 
 @CrossOrigin
