@@ -1,13 +1,12 @@
 package br.com.totvs.sistemaescolar.query.amqp;
 
-
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;
 
-public interface SistemaEscolaExchange {
+public interface YMSExchange {
 
-	public static final String INPUT = "sistema_escolar-input-events";
+	public static final String INPUT = "yms-input-events";
 	
-	@Input(SistemaEscolaExchange.INPUT)
+	@Input(YMSExchange.INPUT)
 	SubscribableChannel inputEvent();
 }

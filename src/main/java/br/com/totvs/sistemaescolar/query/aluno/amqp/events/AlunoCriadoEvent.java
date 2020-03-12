@@ -1,4 +1,4 @@
-package br.com.totvs.sistemaescolar.query.aluno.amqp;
+package br.com.totvs.sistemaescolar.query.aluno.amqp.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

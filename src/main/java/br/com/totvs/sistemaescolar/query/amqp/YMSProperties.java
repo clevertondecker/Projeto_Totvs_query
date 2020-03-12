@@ -1,12 +1,12 @@
-package br.com.totvs.sistemaescolar.query.config;
+package br.com.totvs.sistemaescolar.query.amqp;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import lombok.Data;
 
 @Data
-@ConfigurationProperties(prefix = "sistemaescolar", ignoreUnknownFields = true, ignoreInvalidFields = true)
-public class SistemaescolarProperties {
+@ConfigurationProperties(prefix = "yms", ignoreUnknownFields = true, ignoreInvalidFields = true)
+public class YMSProperties {
 
     private SwaggerProperties swagger;
 

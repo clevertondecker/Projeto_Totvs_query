@@ -7,11 +7,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.totvs.tjf.api.jpa.repository.impl.ApiJpaRepositoryImpl;
 
+import br.com.totvs.sistemaescolar.query.amqp.YMSProperties;
 import br.com.totvs.sistemaescolar.query.config.FlyWayProperties;
-import br.com.totvs.sistemaescolar.query.config.SistemaescolarProperties;
 
 @SpringBootApplication
-@EnableConfigurationProperties({ SistemaescolarProperties.class, FlyWayProperties.class })
+@EnableConfigurationProperties({ YMSProperties.class, FlyWayProperties.class })
 @EnableJpaRepositories(repositoryBaseClass = ApiJpaRepositoryImpl.class)
 public class AluraSpringBootParte2Admin1Application {
 
