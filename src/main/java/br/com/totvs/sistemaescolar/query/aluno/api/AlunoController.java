@@ -1,4 +1,4 @@
-package br.com.totvs.sistemaescolar.query.api;
+package br.com.totvs.sistemaescolar.query.aluno.api;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 

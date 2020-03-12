@@ -15,10 +15,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableConfigurationProperties({ YMSProperties.class, FlyWayProperties.class })
 @EnableJpaRepositories(repositoryBaseClass = ApiJpaRepositoryImpl.class)
 
-public class AluraSpringBootParte2Admin1Application {
+public class SistemaEscolaApplicationQuery {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AluraSpringBootParte2Admin1Application.class, args);
+		SpringApplication.run(SistemaEscolaApplicationQuery.class, args);
 	}
 
 }

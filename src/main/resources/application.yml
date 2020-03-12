@@ -97,11 +97,11 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: ${MQ-HOST}
+                host: localhost
                 port: 5672
-                username: ${MQ-USR}
-                password: ${MQ-PWD}
-                virtualHost: ${MQ-VHOST}
+                username: guest
+                password: guest
+                virtualHost: /
 
 #security:
 #  access:
