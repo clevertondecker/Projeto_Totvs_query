@@ -8,14 +8,17 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.totvs.tjf.api.jpa.repository.impl.ApiJpaRepositoryImpl;
 
 import br.com.totvs.sistemaescolar.query.config.FlyWayProperties;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
+@EnableSwagger2
 @EnableConfigurationProperties({ YMSProperties.class, FlyWayProperties.class })
 @EnableJpaRepositories(repositoryBaseClass = ApiJpaRepositoryImpl.class)
-public class AluraSpringBootParte2Admin1Application {
+
+public class SistemaEscolaApplicationQuery {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AluraSpringBootParte2Admin1Application.class, args);
+		SpringApplication.run(SistemaEscolaApplicationQuery.class, args);
 	}
 
 }
