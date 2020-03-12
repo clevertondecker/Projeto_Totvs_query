@@ -47,7 +47,7 @@ spring:
     password: 132567
   
   flyway:
-    enabled: true
+    enabled: false
     migrate: true
     locations: classpath:db/migration
     # Only TOTVS Tenant (94d73469-6861-46a8-96b3-1abf272e3983)

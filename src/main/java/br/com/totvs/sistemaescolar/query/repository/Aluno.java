@@ -28,7 +28,7 @@ public class Aluno {
 	private String email;
 	private String cpf;
 	private String matricula;
-	private String formaIngresso;
-	private String turmaId;
+//	private String formaIngresso;
+//	private String turmaId;
 
 }

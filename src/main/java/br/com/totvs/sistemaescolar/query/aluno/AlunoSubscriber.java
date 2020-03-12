@@ -22,7 +22,7 @@ public class AlunoSubscriber {
 
 	@StreamListener(target = YMSExchange.INPUT, condition = AlunoCriadoEvent.CONDITIONAL_EXPRESSION)
 	public void AlunoCriadoEvent(TOTVSMessage<AlunoCriadoEvent> event) {
-		LOG.info("ENTROU SUBSCRIBER");
+		LOG.info("ENTROU SUBSCRIBER"+ event.getContent());
 		
 		service.handle(event.getContent());
 	}
